@@ -1,8 +1,5 @@
-<<<<<<< c70ec089833108fd0a8c4d39bc3d4af2857084e5
-# plain-and-simpl
-=======
-### Plain and Simpl API
 
+# plain-and-simpl
 This is the Git repository for Plain and Simpl, a blog posting single-page application. When a user signs up for a new account, they can sign in with their chosen email and password to create, update or delete their blog posts.
 
 ### ERD
@@ -55,4 +52,3 @@ Install with `bundle install`.
 ### Additional Resources
 - http://guides.rubyonrails.org/api_app.html
 - https://blog.codeship.com/building-a-json-api-with-rails-5/
->>>>>>> Initial commit
