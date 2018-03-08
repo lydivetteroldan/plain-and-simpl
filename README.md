@@ -2,13 +2,13 @@
 # Plain and Simpl
 This is the Git repository for Plain and Simpl, a blog posting single-page application. When a user signs up for a new account, they can sign in with their chosen email and password to create, update or delete their blog posts.
 
-### ERD
-- [ERD images](https://imgur.com/a/oVoGR)
+#### ERD
+[ERD images](https://imgur.com/a/oVoGR)
 
-### Wireframes
-- [Wireframe images](https://imgur.com/a/4DSD7)
+#### Wireframes
+[Wireframe images](https://imgur.com/a/4DSD7)
 
-### User Stories
+#### User Stories
 - As _a new user_, I want to be able to sign up for an account with my credentials so that I can sign in.
 - As _a signed up user_, I want to see a message confirming that my account was created successfully so that I can sign in.
 - As _a user_, I want to sign in with my account credentials at any time so that I can create, update or delete my posts.
@@ -18,7 +18,7 @@ This is the Git repository for Plain and Simpl, a blog posting single-page appli
 - As _a signed in user who chooses to create a post_, I want to see input fields so that I can provide the title and content of the post.
 - As _a signed in user_, I want to save a post so that it can be created.
 
-### Technologies Used
+#### Technologies Used
 - HTML
 - CSS
 - JavaScript
@@ -28,6 +28,6 @@ This is the Git repository for Plain and Simpl, a blog posting single-page appli
 - Git
 - Github Pages
 
-### Links
+## Links
 - Plain and Simpl API repository: https://github.com/lydivetteroldan/plain-and-simpl-api
 - Plain and Simpl API on Heroku: http://plain-and-simpl.herokuapp.com/
