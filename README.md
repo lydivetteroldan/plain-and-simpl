@@ -10,7 +10,7 @@ This is the Git repository for Plain and Simpl, a blog posting single-page appli
 
 #### User Stories
 - As _a new user_, I want to be able to sign up for an account with my credentials so that I can sign in.
-- As _a signed up user_, I want to see a message confirming that my account was created successfully so that I can sign in.
+- As _a signed up user_, I want to see a message confirming that my account was created successfully so that I can sign in with my credentials.
 - As _a user_, I want to sign in with my account credentials at any time so that I can create, update or delete my posts.
 - As _a signed in user_, I want to see a confirmation showing that I’m signed in.
 - As _a signed in user_, I want to be able to sign out of my account at any time.
@@ -27,6 +27,22 @@ This is the Git repository for Plain and Simpl, a blog posting single-page appli
 - JSON
 - Git
 - Github Pages
+
+#### Unsolved Issues for Future Iterations
+- Bootstrap integration for UI
+- Modular stylesheet directory
+- HTML and CSS for _Index_ view
+- HTML and CSS for _Sign Up_, _Sign In_ and _Change Password_ forms
+- Create API calls for authentication features
+- Display success or failure messages on forms
+- Hide _Sign Up_ and _Sign In_ features for signed in users
+- Display _Sign Out_ feature for signed in users
+- Clear all forms after submission
+- HTML and CSS for _Post_ view
+- Display _Create_, _Edit_ and _Delete_ features for signed in users
+- Create API calls for CRUD
+- Display success or failure messages on _Post_ view after user actions
+- Hide _Create_, _Edit_ and _Delete_ features for signed out users
 
 ## Links
 - Plain and Simpl API repository: https://github.com/lydivetteroldan/plain-and-simpl-api
