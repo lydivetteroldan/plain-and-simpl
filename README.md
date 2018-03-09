@@ -31,24 +31,37 @@ This is the Git repository for Plain and Simpl, a blog posting single-page appli
 #### Unsolved Issues for Future Iterations
 - ~~Bootstrap integration for UI~~ (done, 3/9/2018)
 - ~~Modular stylesheet directory~~ (done, 3/9/2018)
-- ~~HTML and CSS for _Sign Up_ and _Sign In_ forms~~ (done, 3/9/2018)
-- Test _Sign Up_ and _Sign In_ curl scripts
-- Create AJAX call for _Sign Up_ and _Sign In_ features
-- HTML and CSS for _Change Password_ form
-- Test _Change Password_ curl script
-- Create AJAX call for _Change Password_ feature
-- - Test _Sign Out_ curl script
-- Create AJAX call for _Sign Out_ feature
-- Display success or failure messages on forms
+- Create authentication features
+  - ~~HTML and CSS for _Sign Up_ and _Sign In_ forms~~ (done, 3/9/2018)
+  - Test _Sign Up_ and _Sign In_ curl scripts
+  - Create AJAX call for _Sign Up_ and _Sign In_ features
+  - HTML and CSS for _Change Password_ form
+  - Test _Change Password_ curl script
+  - Create AJAX call for _Change Password_ feature
+  - Test _Sign Out_ curl script
+  - Create AJAX call for _Sign Out_ feature
+  - Display success or failure messages on forms
+  - Hide _Sign Up_ and _Sign In_ features for signed in users
+  - Display _Sign Out_ feature for signed in users
+  - Clear all forms after submission
 - HTML and CSS for _Index_ view
-- Hide _Sign Up_ and _Sign In_ features for signed in users
-- Display _Sign Out_ feature for signed in users
-- Clear all forms after submission
 - HTML and CSS for _Post_ view
-- Display _Create_, _Edit_ and _Delete_ features for signed in users
-- Create AJAX calls for CRUD
-- Display success or failure messages on _Post_ view after user actions
-- Hide _Create_, _Edit_ and _Delete_ features for signed out users
+- Create CRUD features
+  - _Create_ posts
+    - Test curl script
+    - Create AJAX call
+  - _Read_ posts
+    - Test curl script
+    - Create AJAX call
+  - _Update_ posts
+    - Test curl script
+    - Create AJAX call
+  - _Delete_ posts
+    - Test curl script
+    - Create AJAX call
+  - Display _Create_, _Update_ and _Delete_ features for signed in users
+  - Display success or failure messages on _Post_ view after user actions
+  - Hide _Create_, _Update_ and _Delete_ features for signed out users
 
 ## Links
 - Plain and Simpl API repository: https://github.com/lydivetteroldan/plain-and-simpl-api
