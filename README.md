@@ -33,12 +33,14 @@ This is the Git repository for Plain and Simpl, a blog posting single-page appli
 - ~~Modular stylesheet directory~~ (done, 3/9/2018)
 - Create authentication features
   - ~~HTML and CSS for _Sign Up_ and _Sign In_ forms~~ (done, 3/9/2018)
-  - Test _Sign Up_ and _Sign In_ curl scripts
+  - ~~Test curl scripts~~ (done, 3/9/2018)
+    - ~~_Sign Up_~~
+    - ~~_Sign In_~~
+    - ~~_Change Password_~~
+    - ~~_Sign Out_~~
   - Create AJAX call for _Sign Up_ and _Sign In_ features
   - HTML and CSS for _Change Password_ form
-  - Test _Change Password_ curl script
   - Create AJAX call for _Change Password_ feature
-  - Test _Sign Out_ curl script
   - Create AJAX call for _Sign Out_ feature
   - Display success or failure messages on forms
   - Hide _Sign Up_ and _Sign In_ features for signed in users
@@ -47,18 +49,16 @@ This is the Git repository for Plain and Simpl, a blog posting single-page appli
 - HTML and CSS for _Index_ view
 - HTML and CSS for _Post_ view
 - Create CRUD features
-  - _Create_ posts
-    - Test curl script
-    - Create AJAX call
-  - _Read_ posts
-    - Test curl script
-    - Create AJAX call
-  - _Update_ posts
-    - Test curl script
-    - Create AJAX call
-  - _Delete_ posts
-    - Test curl script
-    - Create AJAX call
+  - Test curl scripts
+    - _Create_ posts
+    - _Read_ posts
+    - _Update_ posts
+    - _Delete_ posts
+  - Create AJAX calls
+    - _Create_ posts
+    - _Read_ posts
+    - _Update_ posts
+    - _Delete_ posts
   - Display _Create_, _Update_ and _Delete_ features for signed in users
   - Display success or failure messages on _Post_ view after user actions
   - Hide _Create_, _Update_ and _Delete_ features for signed out users
