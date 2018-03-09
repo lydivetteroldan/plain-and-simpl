@@ -29,18 +29,24 @@ This is the Git repository for Plain and Simpl, a blog posting single-page appli
 - Github Pages
 
 #### Unsolved Issues for Future Iterations
-- Bootstrap integration for UI
-- Modular stylesheet directory
-- HTML and CSS for _Index_ view
-- HTML and CSS for _Sign Up_, _Sign In_ and _Change Password_ forms
-- Create API calls for authentication features
+- ~~Bootstrap integration for UI~~ (done, 3/9/2018)
+- ~~Modular stylesheet directory~~ (done, 3/9/2018)
+- ~~HTML and CSS for _Sign Up_ and _Sign In_ forms~~ (done, 3/9/2018)
+- Test _Sign Up_ and _Sign In_ curl scripts
+- Create AJAX call for _Sign Up_ and _Sign In_ features
+- HTML and CSS for _Change Password_ form
+- Test _Change Password_ curl script
+- Create AJAX call for _Change Password_ feature
+- - Test _Sign Out_ curl script
+- Create AJAX call for _Sign Out_ feature
 - Display success or failure messages on forms
+- HTML and CSS for _Index_ view
 - Hide _Sign Up_ and _Sign In_ features for signed in users
 - Display _Sign Out_ feature for signed in users
 - Clear all forms after submission
 - HTML and CSS for _Post_ view
 - Display _Create_, _Edit_ and _Delete_ features for signed in users
-- Create API calls for CRUD
+- Create AJAX calls for CRUD
 - Display success or failure messages on _Post_ view after user actions
 - Hide _Create_, _Edit_ and _Delete_ features for signed out users
 
