@@ -38,7 +38,7 @@ This is the Git repository for Plain and Simpl, a blog posting single-page appli
     - ~~_Sign In_~~
     - ~~_Change Password_~~
     - ~~_Sign Out_~~
-  - Create AJAX call for _Sign Up_ and _Sign In_ features
+  - ~~Create AJAX call for _Sign Up_ and _Sign In_ features~~ (done, 3/9/2018)
   - HTML and CSS for _Change Password_ form
   - Create AJAX call for _Change Password_ feature
   - Create AJAX call for _Sign Out_ feature
