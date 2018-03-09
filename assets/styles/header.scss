@@ -1,0 +1,24 @@
+@media (min-width: $screen-sm-max) {
+  .main {
+    > .navbar {
+      padding-left: $main-padding;
+      padding-right: $main-padding;
+    }
+  }
+}
+
+.main-nav-btn-group {
+  padding-top: 10px;
+}
+
+@media (max-width: $screen-sm-max) {
+  .main-nav-btn-group {
+    padding-top: 0;
+
+    > .btn {
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+  }
+}
