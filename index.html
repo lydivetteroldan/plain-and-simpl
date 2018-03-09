@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>plain and simpl – blog application</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,14 +12,39 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
+      <div id="page" class="main">
+        <nav class="navbar navbar-static-top">
+          <div class="container-fluid navbar-container">
+            <div class="navbar-header">
+              <a class="btn btn-link btn-inline btn-navbar text-lowercase" href="#">Plain and Simpl</a>
+            </div>
+            <div class="navbar-right">
+              <button class="btn btn-link btn-inline text-lowercase" data-toggle="modal" data-target="#signUpModal">Sign up</button>
+              <button class="btn btn-link btn-inline text-lowercase" data-toggle="modal" data-target="#signInModal">Sign In</button>
+              <div class="dropdown">
+                <button type="submit" id="signedInButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-link btn-inline text-lowercase hidden">Signed In</button>
+                <ul class="dropdown-menu" aria-labelledby="signedInButton">
+                  <li>
+                    <button type="submit" id="changePwdButton" data-toggle="modal" data-target="#changePwdModal" class="btn btn-link btn-inline text-lowercase">Password</button>
+                  </li>
+                  <li>
+                    <button type="submit" id="signOutButton" class="btn btn-link btn-inline text-lowercase">Sign Out</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+        <footer class="footer">
+          <div class="container-fluid footer-container">
+            <div class="row">
+              <div class="col-xs-12">
+                <p class="footer-text">Built by <a class="btn btn-link btn-inline" href="https://github.com/lydivetteroldan" target="_blank">Lydivette Roldán</a></p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
     </body>
 </html>
