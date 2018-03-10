@@ -14,6 +14,12 @@ $(() => {
 // require('./example')
 const authEvents = require('./auth/events')
 
+function hideElements () {
+  $('#signedInButton').hide()
+}
+
+hideElements()
+
 $(() => {
   authEvents.eventHandlers()
 })
