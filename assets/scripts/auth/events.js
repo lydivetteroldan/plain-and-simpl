@@ -20,11 +20,18 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure)
 }
 
+const onChangePassword = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  api.changePassword(data)
+    .then(ui.changePasswordSuccess)
+    .catch(ui.changePasswordFailure)
+}
+
 const eventHandlers = () => {
-  // sign up
   $('#signUpForm').on('submit', onSignUp)
-  // sign in
   $('#signInForm').on('submit', onSignIn)
+  $('#changePwdForm').on('submit', onChangePassword)
 }
 
 module.exports = {

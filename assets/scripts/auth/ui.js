@@ -5,6 +5,7 @@ const store = require('../store')
 const signUpSuccess = function (data) {
   $('#signUpMessage').text('Signed up successfully')
   $('#signUpMessage').css('color', 'green')
+  $('#signUpButton').hide(200)
 }
 
 const signUpFailure = function () {
@@ -15,6 +16,9 @@ const signUpFailure = function () {
 const signInSuccess = function (data) {
   $('#signInMessage').text('Signed in successfully')
   $('#signInMessage').css('color', 'green')
+  $('#signInButton').hide(200)
+  $('#signUpButton').hide(200)
+  $('#signedInButton').show(200)
   store.user = data.user
 }
 
@@ -23,9 +27,21 @@ const signInFailure = function () {
   $('#signInMessage').css('color', 'red')
 }
 
+const changePasswordSuccess = function () {
+  $('#changePwdMessage').text('Changed password successfully')
+  $('#changePwdMessage').css('color', 'green')
+}
+
+const changePasswordFailure = function () {
+  $('#changePwdMessage').text('Error on changing password')
+  $('#changePwdMessage').css('color', 'red')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
-  signInFailure
+  signInFailure,
+  changePasswordSuccess,
+  changePasswordFailure
 }

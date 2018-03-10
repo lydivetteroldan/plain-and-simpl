@@ -3,7 +3,6 @@
 const config = require('../config')
 const store = require('../store')
 
-// signUp
 const signUp = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/sign-up',
@@ -11,11 +10,10 @@ const signUp = function (data) {
     headers: {
       contentType: 'application/json'
     },
-    data: data
+    data
   })
 }
 
-// signIn
 const signIn = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/sign-in',
@@ -23,11 +21,23 @@ const signIn = function (data) {
     headers: {
       contentType: 'application/json'
     },
-    data: data
+    data
+  })
+}
+
+const changePassword = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/change-password/',
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
   })
 }
 
 module.exports = {
   signUp,
-  signIn
+  signIn,
+  changePassword
 }
