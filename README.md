@@ -31,7 +31,7 @@ This is the Git repository for Plain and Simpl, a blog posting single-page appli
 #### Unsolved Issues for Future Iterations
 - ~~Bootstrap integration for UI~~ (done, 3/9/2018)
 - ~~Modular stylesheet directory~~ (done, 3/9/2018)
-- Create authentication features
+- ~~Create authentication features~~ (done, 3/10/2018)
   - ~~HTML and CSS for _Sign Up_ and _Sign In_ forms~~ (done, 3/9/2018)
   - ~~Test curl scripts~~ (done, 3/9/2018)
     - ~~_Sign Up_~~
@@ -39,14 +39,13 @@ This is the Git repository for Plain and Simpl, a blog posting single-page appli
     - ~~_Change Password_~~
     - ~~_Sign Out_~~
   - ~~Create AJAX call for _Sign Up_ and _Sign In_ features~~ (done, 3/9/2018)
-  - HTML and CSS for _Change Password_ form
-  - Create AJAX call for _Change Password_ feature
-  - Create AJAX call for _Sign Out_ feature
-  - Display success or failure messages on forms
-  - Hide _Sign Up_ and _Sign In_ features for signed in users
-  - Display _Sign Out_ feature for signed in users
-  - Clear all forms after submission
-- HTML and CSS for _Index_ view
+  - ~~HTML and CSS for _Change Password_ form~~ (done, 3/10/2018)
+  - ~~Create AJAX call for _Change Password_ feature~~ (done, 3/10/2018)
+  - ~~Create AJAX call for _Sign Out_ feature~~ (done, 3/10/2018)
+  - ~~Display success or failure messages on forms~~ (done, 3/10/2018)
+  - ~~Hide _Sign Up_ and _Sign In_ features for signed in users~~ (done, 3/10/2018)
+  - ~~Display _Sign Out_ feature for signed in users~~ (done, 3/10/2018)
+  - ~~Clear all forms after submission~~ (done, 3/10/2018)
 - HTML and CSS for _Post_ view
 - Create CRUD features
   - Test curl scripts
@@ -62,6 +61,7 @@ This is the Git repository for Plain and Simpl, a blog posting single-page appli
   - Display _Create_, _Update_ and _Delete_ features for signed in users
   - Display success or failure messages on _Post_ view after user actions
   - Hide _Create_, _Update_ and _Delete_ features for signed out users
+- HTML and CSS for _Index_ view
 
 ## Links
 - Plain and Simpl API repository: https://github.com/lydivetteroldan/plain-and-simpl-api
