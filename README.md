@@ -46,7 +46,6 @@ This is the Git repository for Plain and Simpl, a blog posting single-page appli
   - ~~Hide _Sign Up_ and _Sign In_ features for signed in users~~ (done, 3/10/2018)
   - ~~Display _Sign Out_ feature for signed in users~~ (done, 3/10/2018)
   - ~~Clear all forms after submission~~ (done, 3/10/2018)
-- HTML and CSS for _Post_ view
 - Create CRUD features
   - ~~Test curl scripts~~ (done, 3/10/2018)
     - ~~_Create_ post~~
@@ -59,9 +58,13 @@ This is the Git repository for Plain and Simpl, a blog posting single-page appli
     - _Update_ post
     - _Delete_ post
   - Display _Create_, _Update_ and _Delete_ features for signed in users
-  - Display success or failure messages on _Post_ view after user actions
   - Hide _Create_, _Update_ and _Delete_ features for signed out users
-- HTML and CSS for _Index_ view
+  - Display success or failure messages on _Post_ view after user actions
+- HTML and CSS for CRUD views:
+  - ~~_Create Post_~~ (done, 3/10/2018)
+  - ~~_Read Post_~~
+  - ~~_Update Post_~~
+  - ~~_Delete Post~~
 
 ## Links
 - Plain and Simpl API repository: https://github.com/lydivetteroldan/plain-and-simpl-api
