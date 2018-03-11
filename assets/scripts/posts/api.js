@@ -15,6 +15,14 @@ const create = function (data) {
   })
 }
 
+const index = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/posts',
+    method: 'GET'
+  })
+}
+
 module.exports = {
-  create
+  create,
+  index
 }
