@@ -62,9 +62,9 @@ This is the Git repository for Plain and Simpl, a blog posting single-page appli
   - Display success or failure messages on _Post_ view after user actions
 - HTML and CSS for CRUD views:
   - ~~_Create Post_~~ (done, 3/10/2018)
-  - ~~_Read Post_~~
-  - ~~_Update Post_~~
-  - ~~_Delete Post~~
+  - _Read Post_
+  - _Update Post_
+  - _Delete Post_
 
 ## Links
 - Plain and Simpl API repository: https://github.com/lydivetteroldan/plain-and-simpl-api
