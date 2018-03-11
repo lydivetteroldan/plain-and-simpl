@@ -13,6 +13,7 @@ $(() => {
 // use require without a reference to ensure a file is bundled
 // require('./example')
 const authEvents = require('./auth/events')
+const postEvents = require('./posts/events')
 
 function hideElements () {
   $('#signedInButton').hide()
@@ -22,4 +23,5 @@ hideElements()
 
 $(() => {
   authEvents.eventHandlers()
+  postEvents.eventHandlers()
 })
