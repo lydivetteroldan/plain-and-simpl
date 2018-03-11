@@ -1,8 +1,25 @@
+.dropdown-menu {
+  -webkit-box-shadow: none;
+  border-radius: 0;
+  box-shadow: none;
+
+  li {
+    &:not(.divider) {
+      padding: $medium-padding;
+    }
+  }
+}
+
 .navbar-container {
-  padding-top: 15px;
+  padding-top: $medium-padding;
 }
 
 @media (max-width: $screen-xs-max) {
+  .dropdown-menu-right {
+    left: 0;
+    right: 0;
+  }
+
   .navbar-right {
     margin-left: -15px;
     margin-right: -15px;
