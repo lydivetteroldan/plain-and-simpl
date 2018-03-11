@@ -1,8 +1,4 @@
 .dropdown-menu {
-  -webkit-box-shadow: none;
-  border-radius: 0;
-  box-shadow: none;
-
   li {
     &:not(.divider) {
       padding: $medium-padding;

@@ -17,3 +17,14 @@ a {
     color: $black;
   }
 }
+
+.dropdown-menu,
+.form-control {
+  -webkit-box-shadow: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+textarea {
+  resize: none;
+}

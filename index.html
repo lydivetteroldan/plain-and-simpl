@@ -98,7 +98,6 @@
             </div>
           </div>
         </div>
-
         <nav class="navbar navbar-static-top">
           <div class="container-fluid navbar-container">
             <div class="navbar-header">
@@ -111,7 +110,7 @@
                 <button type="submit" id="signedInButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-link btn-inline text-lowercase hidden-element">Signed In</button>
                 <ul class="dropdown-menu" aria-labelledby="signedInButton">
                   <li>
-                    <button type="submit" id="createButton" class="btn btn-link btn-inline text-lowercase">Create Post</button>
+                    <button type="submit" id="createPostButton" class="btn btn-link btn-inline text-lowercase">Create Post</button>
                   </li>
                   <li>
                     <button type="submit" id="changePwdButton" data-toggle="modal" data-target="#changePwdModal" class="btn btn-link btn-inline text-lowercase">Password</button>
@@ -125,6 +124,32 @@
             </div>
           </div>
         </nav>
+        <div class="container main-container">
+          <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+            <section class="section post" id="createPostSection">
+              <form id="createPostForm">
+                <div class="form-group">
+                  <p class="lead strong text-lowercase section-title">Create Post</p>
+                  <hr class="divider">
+                </div>
+                <div class="form-group row">
+                  <div class="col-md-7">
+                    <label for="postTitleInput">Title</label>
+                    <input id="postTitleInput" type="text" class="form-control post-title-input" name="post[title]" placeholder="Title">
+                  </div>
+                  <div class="col-md-3 col-md-offset-2">
+                    <label for="postDateInput">Date</label>
+                    <input type="text" class="form-control post-date-input" id="postDateInput" name="post[date]" placeholder="DD-MM-YYYY">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <textarea id="postContentInput" class="form-control" rows="4" name="post[content]"></textarea>
+                </div>
+                <button type="submit" class="btn btn-default text-lowercase">Create</button>
+              </form>
+            </section>
+          </div>
+        </div>
         <footer class="footer">
           <div class="container-fluid footer-container">
             <div class="row">
