@@ -53,8 +53,8 @@ This is the Git repository for Plain and Simpl, a blog posting single-page appli
     - ~~_Update_ post~~
     - ~~_Delete_ post~~
   - Create AJAX calls
-    - _Create_ post
-    - _Read_ post
+    - ~~_Create_ post~~ (done, 3/10/2018)
+    - ~~_Read_ post~~ (done, 3/11/2018)
     - _Update_ post
     - _Delete_ post
   - Display _Create_, _Update_ and _Delete_ features for signed in users
