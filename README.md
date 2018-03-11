@@ -48,16 +48,16 @@ This is the Git repository for Plain and Simpl, a blog posting single-page appli
   - ~~Clear all forms after submission~~ (done, 3/10/2018)
 - HTML and CSS for _Post_ view
 - Create CRUD features
-  - Test curl scripts
-    - _Create_ posts
-    - _Read_ posts
-    - _Update_ posts
-    - _Delete_ posts
+  - ~~Test curl scripts~~ (done, 3/10/2018)
+    - ~~_Create_ post~~
+    - ~~_Read_ post~~
+    - ~~_Update_ post~~
+    - ~~_Delete_ post~~
   - Create AJAX calls
-    - _Create_ posts
-    - _Read_ posts
-    - _Update_ posts
-    - _Delete_ posts
+    - _Create_ post
+    - _Read_ post
+    - _Update_ post
+    - _Delete_ post
   - Display _Create_, _Update_ and _Delete_ features for signed in users
   - Display success or failure messages on _Post_ view after user actions
   - Hide _Create_, _Update_ and _Delete_ features for signed out users
