@@ -1,11 +1,13 @@
+.footer {
+  bottom: 0;
+  height: 60px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
 @media (min-width: $screen-sm-max) {
   .footer {
-    bottom: 0;
-    height: 60px;
-    left: 0;
-    position: absolute;
-    width: 100%;
-
     &-container {
       padding-left: $main-padding;
       padding-right: $main-padding;
