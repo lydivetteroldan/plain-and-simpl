@@ -14,6 +14,7 @@ const showUpdatedPostTemplate = require('../templates/post.handlebars')
 
 const onShowPostsSuccess = (data) => {
   const showPostsHtml = showPostsTemplate({ posts: data.posts })
+  $('#deletePostMessage').empty()
   $(postsList).html(showPostsHtml)
 }
 
@@ -26,13 +27,14 @@ const onShowPostSuccess = (data) => {
   const showPostHtml = showPostTemplate({ post: data.post })
   $(postsList).empty()
   $(postSection).html(showPostHtml)
+  $('#deletePostMessage').empty()
   $('#findPostForm').trigger('reset')
   if (data.post.editable !== false) {
     $('#editPostButton').show()
     $('#deletePostButton').show()
   } else {
     $('#editPostButton').hide()
-    $('#deletePostButton').show()
+    $('#deletePostButton').hide()
   }
 }
 
@@ -70,6 +72,7 @@ const onDeletePostSuccess = function () {
   console.log('deleted it')
   $('#deletePostButton').closest('.section.post > .row').hide(200).remove()
   $('#deletePostMessage').html('<p>Your post has been deleted.</p>')
+
 }
 
 const onDeletePostFailure = function (error) {
