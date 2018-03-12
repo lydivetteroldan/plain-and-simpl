@@ -19,5 +19,4 @@ $(() => {
 $(() => {
   authEvents.eventHandlers()
   postEvents.eventHandlers()
-  postEvents.showPosts()
 })

@@ -22,7 +22,27 @@ const index = function () {
   })
 }
 
+const show = function (id) {
+  return $.ajax({
+    url: config.apiOrigin + '/posts/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const update = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/posts/' + data.post.id,
+    method: 'PATCH',
+    data
+  })
+}
+
 module.exports = {
   create,
-  index
+  index,
+  show,
+  update
 }

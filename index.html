@@ -98,6 +98,29 @@
             </div>
           </div>
         </div>
+        <!-- Modal: Find Post -->
+        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="findPostLabel" id="findPostModal">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-lowercase" id="signUpModalLabel">Find Post</h4>
+              </div>
+              <div class="modal-body">
+                <form id="findPostForm">
+                  <div class="form-group">
+                    <label for="inputFindPost" class="control-label">Post ID</label>
+                    <input type="text" class="form-control" name="post[id]" placeholder="Search by Post ID" id="inputFindPost">
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-default text-lowercase" id="findPostButton">Find</button>
+                    <p id="findPostMessage"></p>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
         <nav class="navbar navbar-static-top">
           <div class="container-fluid navbar-container">
             <div class="navbar-header">
@@ -110,14 +133,22 @@
                 <button type="submit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-link btn-inline text-lowercase" id="signedInButton">Signed In</button>
                 <ul class="dropdown-menu" aria-labelledby="signedInButton">
                   <li>
-                    <button type="submit" id="createPostButton" data-toggle="modal" data-target="#createPostModal" class="btn btn-link btn-inline text-lowercase">Create Post</button>
+                    <button type="submit" data-toggle="modal" data-target="#createPostModal" class="btn btn-link btn-inline text-lowercase" id="createPostButton">Create Post</button>
                   </li>
                   <li>
-                    <button type="submit" id="changePwdButton" data-toggle="modal" data-target="#changePwdModal" class="btn btn-link btn-inline text-lowercase">Password</button>
+                    <button type="submit" data-toggle="modal" data-target="#findPostModal" class="btn btn-link btn-inline text-lowercase">Search</button>
+                  </li>
+                  <li>
+                    <form id="postsSearch">
+                      <button type="submit" class="btn btn-link btn-inline text-lowercase">View All Posts</button>
+                    </form>
+                  </li>
+                  <li>
+                    <button type="submit" data-toggle="modal" data-target="#changePwdModal" class="btn btn-link btn-inline text-lowercase" id="changePwdButton">Password</button>
                   </li>
                   <li role="separator" class="divider"></li>
                   <li>
-                    <button type="submit" id="signOutButton" class="btn btn-link btn-inline text-lowercase">Sign Out</button>
+                    <button type="submit" class="btn btn-link btn-inline text-lowercase" id="signOutButton" >Sign Out</button>
                   </li>
                 </ul>
               </div>
@@ -129,6 +160,10 @@
             <div class="page-content" id="pageContent">
               <!-- Posts -->
               <section class="section posts">
+                <div class="message"></div>
+              </section>
+              <!-- Post -->
+              <section class="section post">
                 <div class="message"></div>
               </section>
               <!-- Modal: Create Post -->

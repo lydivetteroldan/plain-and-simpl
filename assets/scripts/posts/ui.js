@@ -1,24 +1,44 @@
 'use strict'
 
 // TODO remove console.log after debugging!!!
-
-const showPostsTemplate = require('../templates/posts.handlebars')
+const createPostMessage = $('.create-post.section .message')
+const findPostMessage = $('#findPostMessage')
 const postsList = $('.posts.section')
 const postsMessage = $('.posts.section .message')
-const postMessage = $('.create-post.section .message')
+const postMessage = $('.post.section .message')
+const postSection = $('.post.section')
+const showPostTemplate = require('../templates/post.handlebars')
+const showPostsTemplate = require('../templates/posts.handlebars')
 
-const onShowSuccess = (data) => {
-  if (!data) {
-    $(postsMessage).html('<p>No posts.<p>')
-    $(postsList).html(' ')
+const onShowPostsSuccess = (data) => {
+  const showPostsHtml = showPostsTemplate({ posts: data.posts })
+  $(postsList).html(showPostsHtml)
+}
+
+const onShowPostsFailure = (data) => {
+  $(postsMessage).html('<p>No posts.<p>')
+  $(postsList).html(' ')
+}
+
+const onShowPostSuccess = (data) => {
+  const showPostHtml = showPostTemplate({ post: data.post })
+  $(postsList).empty()
+  $(postSection).html(showPostHtml)
+  $('#findPostForm').trigger('reset')
+  if (data.post.editable !== false) {
+    $('#editPostButton').show()
   } else {
-    const showPostsHtml = showPostsTemplate({ posts: data.posts })
-    $(postsList).html(showPostsHtml)
+    $('#editPostButton').hide()
   }
 }
 
+const onShowPostFailure = () => {
+  $(findPostMessage).html('The post could not be found.')
+  $(postSection).html(' ')
+}
+
 const onCreateSuccess = function () {
-  $(postMessage).html('<p>Your post has been saved.</p>')
+  $(createPostMessage).html('<p>Your post has been saved.</p>')
   $('#createPostForm').trigger('reset')
 }
 
@@ -27,7 +47,10 @@ const onCreateFailure = function () {
 }
 
 module.exports = {
-  onShowSuccess,
+  onShowPostSuccess,
+  onShowPostsSuccess,
+  onShowPostsFailure,
+  onShowPostFailure,
   onCreateSuccess,
   onCreateFailure,
   postMessage
