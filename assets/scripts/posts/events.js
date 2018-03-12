@@ -23,10 +23,10 @@ const onCreatePost = (event) => {
 }
 
 const eventHandlers = () => {
-  showPosts()
   $('#createPostForm').on('submit', onCreatePost)
 }
 
 module.exports = {
-  eventHandlers
+  eventHandlers,
+  showPosts
 }
