@@ -1,29 +1,29 @@
 'use strict'
 
-const postsApi = require('./api.js')
-const postsUi = require('./ui.js')
+const api = require('./api.js')
+const ui = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields')
 
-const onGetPosts = function () {
-  postsApi.index()
-    .then(postsUi.onSuccess)
-    .catch(postsUi.onError)
+const showPosts = () => {
+  api.index()
+    .then(ui.onShowSuccess)
+    .catch(ui.onError)
 }
 
-const onCreatePost = function (event) {
+const onCreatePost = (event) => {
   event.preventDefault()
-  const data = getFormFields(this)
+  const data = getFormFields(event.target)
   if (data.post.title === '' || data.post.date === '' || data.post.content === '') {
-    // TODO display error message for user if at least one field is blank
+    $(ui.postMessage).html('<p>Please make sure there are no empty fields and try again.</p>')
     return false
   }
-  postsApi.create(data)
-    .then(postsUi.onCreateSuccess)
-    .then(onGetPosts)
-    .catch(postsUi.onError)
+  api.create(data)
+    .then(ui.onCreateSuccess)
+    .catch(ui.onError)
 }
 
 const eventHandlers = () => {
+  showPosts()
   $('#createPostForm').on('submit', onCreatePost)
 }
 

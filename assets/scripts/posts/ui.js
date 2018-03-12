@@ -2,29 +2,33 @@
 
 // TODO remove console.log after debugging!!!
 
-const onSuccess = function (data) {
-  console.log('data is ', data)
+const showPostsTemplate = require('../templates/posts.handlebars')
+const postsList = $('.posts.section')
+const postsMessage = $('.posts.section .message')
+const postMessage = $('.create-post.section .message')
+
+const onShowSuccess = (data) => {
   if (!data) {
-    // TODO display error message for user
-    console.warn('Either you deleted something, or something went wrong.')
-  } else if (data.post) {
-    console.log(data.post)
+    $(postsMessage).html('<p>No posts.<p>')
+    $(postsList).html(' ')
   } else {
-    console.table(data.posts)
+    const showPostsHtml = showPostsTemplate({ posts: data.posts })
+    $(postsList).html(showPostsHtml)
   }
 }
 
-const onError = function (response) {
-  // TODO display error message for user
-  console.error(response)
+const onCreateSuccess = function () {
+  $(postMessage).html('<p>Your post has been saved.</p>')
+  $('#createPostForm').trigger('reset')
 }
 
-const onCreateSuccess = function () {
-  $('#createPostSection').hide('slow')
+const onCreateFailure = function () {
+  $(postMessage).html('<p>There was an error. Please try again.</p>')
 }
 
 module.exports = {
-  onError,
-  onSuccess,
-  onCreateSuccess
+  onShowSuccess,
+  onCreateSuccess,
+  onCreateFailure,
+  postMessage
 }
