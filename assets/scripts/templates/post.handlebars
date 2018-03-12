@@ -14,8 +14,10 @@
         <small>Post ID: {{post.id}}</small>
       </div>
       <div class="col-md-5">
-        <button type="submit" class="btn btn-default text-lowercase" id="editPostButton">Edit</button>
+        <button type="submit" data-toggle="modal" data-target="#editPostModal" class="btn btn-default text-lowercase" id="editPostButton">Edit</button>
+        <button type="submit" class="btn btn-default text-lowercase" data-id="{{post.id}}" id="deletePostButton">Delete</button>
       </div>
     </div>
   </div>
 </div>
+<div id="deletePostMessage"></div>

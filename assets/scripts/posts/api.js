@@ -32,10 +32,24 @@ const show = function (id) {
   })
 }
 
+const destroy = function (id) {
+  return $.ajax({
+    url: config.apiOrigin + '/posts/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const update = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/posts/' + data.post.id,
     method: 'PATCH',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
     data
   })
 }
@@ -44,5 +58,6 @@ module.exports = {
   create,
   index,
   show,
-  update
+  update,
+  destroy
 }

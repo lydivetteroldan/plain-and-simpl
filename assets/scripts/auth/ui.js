@@ -48,6 +48,7 @@ const signOutSuccess = function () {
   $('#signInButton').show(200)
   $('#signUpButton').show(200)
   $('#signedInButton').hide(200)
+  $('#postsList').hide(200)
   store.user = null
 }
 

@@ -37,10 +37,37 @@ const onCreatePost = (event) => {
     .catch(ui.onCreateFailure)
 }
 
+const onUpdatePost = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  const post = data.post
+  if (post.title === '') {
+    $(ui.editPostMessage).html('<p>All fields are required. Please make sure you entered the correct ID and try again.</p>')
+    return false
+  }
+  if (post.id.length !== 0) {
+    api.update(data)
+      .then(ui.onUpdatePostSuccess)
+      .catch(ui.onUpdatePostFailure)
+  } else {
+    console.log('Please provide a post id!')
+  }
+}
+
+const onDeletePost = (event) => {
+  event.preventDefault()
+  const id = event.target.dataset.id
+  api.destroy(id)
+    .then(ui.onDeletePostSuccess)
+    .catch(ui.onDeletePostFailure)
+}
+
 const eventHandlers = () => {
   $('#createPostForm').on('submit', onCreatePost)
   $('#postsSearch').on('submit', onShowPosts)
   $('#findPostForm').on('submit', onShowPost)
+  $('#editPostForm').on('submit', onUpdatePost)
+  $('.post').on('click', '#deletePostButton', onDeletePost)
 }
 
 module.exports = {
