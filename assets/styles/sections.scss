@@ -1,20 +1,14 @@
-.post {
-  .section-title {
-    margin-bottom: 0;
-
-    & + .divider {
-      border-top: 2px solid $gray;
-      margin-bottom: 8%;
-      margin-top: 0;
-    }
-  }
-}
-
 @media (max-width: $screen-xs-max) {
   .post {
     &-date-input,
     &-title-input {
       margin-bottom: $medium-padding;
     }
+  }
+}
+
+.posts-list {
+  li {
+    border-bottom: 1px solid $gray;
   }
 }
