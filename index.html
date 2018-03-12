@@ -104,7 +104,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title text-lowercase" id="signUpModalLabel">Find Post</h4>
+                <h4 class="modal-title text-lowercase" id="findPostModalLabel">Find Post</h4>
               </div>
               <div class="modal-body">
                 <form id="findPostForm">
@@ -116,6 +116,40 @@
                     <button type="submit" class="btn btn-default text-lowercase" id="findPostButton">Find</button>
                     <p id="findPostMessage"></p>
                   </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal: Edit Post -->
+        <div class="modal fade edit-post" tabindex="-1" role="dialog" aria-labelledby="editPostLabel" id="editPostModal">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-lowercase" id="editPostModalLabel">Edit Post</h4>
+              </div>
+              <div class="modal-body">
+                <form id="editPostForm">
+                  <div class="form-group">
+                    <label for="inputFindAndEditPost" class="control-label">Post ID</label>
+                    <input type="text" class="form-control" name="post[id]" placeholder="Search by Post ID" id="inputFindAndEditPost">
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-7">
+                      <label for="editPostTitleInput">Title</label>
+                      <input id="editPostTitleInput" type="text" class="form-control post-title-input" name="post[title]" placeholder="Title">
+                    </div>
+                    <div class="col-md-3 col-md-offset-2">
+                      <label for="editPostDateInput">Date</label>
+                      <input type="text" class="form-control post-date-input" id="editPostDateInput" name="post[date]" placeholder="DD-MM-YYYY">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <textarea id="editPostContentInput" class="form-control" rows="4" name="post[content]"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-default text-lowercase">Save</button>
+                  <div class="message"></div>
                 </form>
               </div>
             </div>
@@ -133,7 +167,10 @@
                 <button type="submit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-link btn-inline text-lowercase" id="signedInButton">Signed In</button>
                 <ul class="dropdown-menu" aria-labelledby="signedInButton">
                   <li>
-                    <button type="submit" data-toggle="modal" data-target="#createPostModal" class="btn btn-link btn-inline text-lowercase" id="createPostButton">Create Post</button>
+                    <button type="submit" data-toggle="modal" data-target="#createPostModal" class="btn btn-link btn-inline text-lowercase" id="createPostButton">Create</button>
+                  </li>
+                  <li>
+                    <button type="submit" data-toggle="modal" data-target="#editPostModal" class="btn btn-link btn-inline text-lowercase">Edit</button>
                   </li>
                   <li>
                     <button type="submit" data-toggle="modal" data-target="#findPostModal" class="btn btn-link btn-inline text-lowercase">Search</button>
@@ -159,12 +196,11 @@
           <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
             <div class="page-content" id="pageContent">
               <!-- Posts -->
-              <section class="section posts">
+              <section class="section posts" id="postsList">
                 <div class="message"></div>
               </section>
               <!-- Post -->
               <section class="section post">
-                <div class="message"></div>
               </section>
               <!-- Modal: Create Post -->
               <section class="modal fade section create-post" tabindex="-1" role="dialog" aria-labelledby="createPostFormLabel" id="createPostModal">
