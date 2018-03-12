@@ -52,13 +52,13 @@ This is the Git repository for Plain and Simpl, a blog posting single-page appli
     - ~~_Read_ post~~
     - ~~_Update_ post~~
     - ~~_Delete_ post~~
-  - Create AJAX calls
+  - ~~Create AJAX calls~~ (done, 3/12/2018)
     - ~~_Create_ post~~ (done, 3/10/2018)
     - ~~_Read_ post~~ (done, 3/11/2018)
-    - _Update_ post
-    - _Delete_ post
-  - Display _Create_, _Update_ and _Delete_ features for signed in users
-  - Hide _Create_, _Update_ and _Delete_ features for signed out users
+    - ~~_Update_ post~~ (done, 3/12/2018)
+    - ~~_Delete_ post~~ (done, 3/12/2018)
+  - ~~Display _Create_, _Update_ and _Delete_ features for signed in users~~ (done, 3/12/2018)
+  - ~~Hide _Create_, _Update_ and _Delete_ features for signed out users~~ (done, 3/12/2018)
   - Display success or failure messages on _Post_ view after user actions
 - HTML and CSS for CRUD views:
   - ~~_Create Post_~~ (done, 3/10/2018)
