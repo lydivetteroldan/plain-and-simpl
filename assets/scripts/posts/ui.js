@@ -63,21 +63,18 @@ const onUpdatePostSuccess = function (data) {
   $('#editPostForm').trigger('reset')
 }
 
-const onUpdatePostFailure = function (error) {
+const onUpdatePostFailure = function () {
   $(postMessage).html('<p>There was an error. Please try again.</p>')
-  console.log(error)
 }
 
 const onDeletePostSuccess = function () {
   console.log('deleted it')
   $('#deletePostButton').closest('.section.post > .row').hide(200).remove()
   $('#deletePostMessage').html('<p>Your post has been deleted.</p>')
-
 }
 
-const onDeletePostFailure = function (error) {
-  console.log('not deleted')
-  console.log(error)
+const onDeletePostFailure = function () {
+  $('#deletePostMessage').html('<p>There was an error. Your post was not deleted. Please try again. </p>')
 }
 
 module.exports = {
