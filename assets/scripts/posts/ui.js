@@ -6,7 +6,6 @@ const findPostMessage = $('#findPostMessage')
 const editPostMessage = $('.edit-post .message')
 const postsList = $('.posts.section')
 const postsMessage = $('.posts.section .message')
-const postMessage = $('.post.section .message')
 const postSection = $('.post.section')
 const showPostTemplate = require('../templates/post.handlebars')
 const showPostsTemplate = require('../templates/posts.handlebars')
@@ -16,16 +15,18 @@ const onShowPostsSuccess = (data) => {
   const showPostsHtml = showPostsTemplate({ posts: data.posts })
   $('#deletePostMessage').empty()
   $(postsList).html(showPostsHtml)
+  $(postsMessage).html(' ')
 }
 
-const onShowPostsFailure = (data) => {
-  $(postsMessage).html('<p>No posts.<p>')
+const onShowPostsFailure = () => {
+  $(postsMessage).html('<p>No posts found.<p>')
   $(postsList).html(' ')
 }
 
 const onShowPostSuccess = (data) => {
   const showPostHtml = showPostTemplate({ post: data.post })
   $(postsList).empty()
+  $(postsMessage).html(' ')
   $(postSection).html(showPostHtml)
   $('#deletePostMessage').empty()
   $('#findPostForm').trigger('reset')
@@ -47,6 +48,7 @@ const onCreateSuccess = function (data) {
   $(createPostMessage).html('<p>Your post has been saved.</p>')
   const showPostHtml = showPostTemplate({ post: data.post })
   $(postsList).empty()
+  $(postsMessage).html(' ')
   $(postSection).html(showPostHtml)
   $('#createPostModal').on('hidden.bs.modal', function (e) {
     $(createPostMessage).html(' ')
@@ -61,6 +63,7 @@ const onCreateFailure = function () {
 const onUpdatePostSuccess = function (data) {
   const showUpdatedPostHtml = showUpdatedPostTemplate({ post: data.post })
   $(postsList).empty()
+  $(postsMessage).html(' ')
   $(postSection).html(showUpdatedPostHtml)
   $(editPostMessage).html('<p>Your post has been updated.</p>')
   $('#editPostModal').on('hidden.bs.modal', function (e) {
@@ -81,6 +84,7 @@ const onUpdatePostFailure = function () {
 const onDeletePostSuccess = function () {
   $('#deletePostButton').closest('.section.post > .row').hide(200).remove()
   $('#deletePostMessage').html('<p>Your post has been deleted.</p>')
+  $(postsMessage).html(' ')
 }
 
 const onDeletePostFailure = function () {
