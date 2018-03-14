@@ -55,7 +55,7 @@ const onCreateSuccess = function (data) {
 }
 
 const onCreateFailure = function () {
-  $(postMessage).html('<p>There was an error. Please try again.</p>')
+  $(createPostMessage).html('<p>There was an error. Please try again.</p>')
 }
 
 const onUpdatePostSuccess = function (data) {
