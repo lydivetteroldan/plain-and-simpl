@@ -28,7 +28,8 @@ const onCreatePost = (event) => {
   const post = data.post
   if (post.title === '' || post.date === '' || post.content === '') {
     $(ui.postMessage).html('<p>Please make sure there are no empty fields and try again.</p>')
-    return false
+  } else {
+    $(ui.postMessage).html('<p>There was an error. Please try again.</p>')
   }
   api.create(data)
     .then(ui.onCreateSuccess)
@@ -41,14 +42,10 @@ const onUpdatePost = function (event) {
   const post = data.post
   if (post.title === '' || post.date === '' || post.content === '') {
     $(ui.editPostMessage).html('<p>All fields are required. Please make sure you entered the correct ID and try again.</p>')
-    return false
-  }
-  if (post.id.length !== 0) {
+  } else if (post.id.length !== 0) {
     api.update(data)
       .then(ui.onUpdatePostSuccess)
       .catch(ui.onUpdatePostFailure)
-  } else {
-    $(ui.editPostMessage).html('<p>All fields are required. Please make sure you entered the correct ID and try again.</p>')
   }
 }
 
