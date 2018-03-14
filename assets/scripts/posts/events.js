@@ -19,8 +19,6 @@ const onShowPost = function (event) {
     api.show(post.id)
       .then(ui.onShowPostSuccess)
       .catch(ui.onShowPostFailure)
-  } else {
-    console.log('Please provide a post id!')
   }
 }
 
@@ -41,7 +39,7 @@ const onUpdatePost = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   const post = data.post
-  if (post.title === '') {
+  if (post.title === '' || post.date === '' || post.content === '') {
     $(ui.editPostMessage).html('<p>All fields are required. Please make sure you entered the correct ID and try again.</p>')
     return false
   }
@@ -50,7 +48,7 @@ const onUpdatePost = function (event) {
       .then(ui.onUpdatePostSuccess)
       .catch(ui.onUpdatePostFailure)
   } else {
-    console.log('Please provide a post id!')
+    $(ui.editPostMessage).html('<p>All fields are required. Please make sure you entered the correct ID and try again.</p>')
   }
 }
 
