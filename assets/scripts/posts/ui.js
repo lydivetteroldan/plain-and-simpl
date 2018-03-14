@@ -45,10 +45,13 @@ const onShowPostFailure = () => {
 
 const onCreateSuccess = function (data) {
   $(createPostMessage).html('<p>Your post has been saved.</p>')
-  $('#createPostForm').trigger('reset')
   const showPostHtml = showPostTemplate({ post: data.post })
   $(postsList).empty()
   $(postSection).html(showPostHtml)
+  $('#createPostModal').on('hidden.bs.modal', function (e) {
+    $(createPostMessage).html(' ')
+  })
+  $('#createPostForm').trigger('reset')
 }
 
 const onCreateFailure = function () {
@@ -60,15 +63,22 @@ const onUpdatePostSuccess = function (data) {
   $(postsList).empty()
   $(postSection).html(showUpdatedPostHtml)
   $(editPostMessage).html('<p>Your post has been updated.</p>')
+  $('#editPostModal').on('hidden.bs.modal', function (e) {
+    $(editPostMessage).html(' ')
+    $('#editPostForm').trigger('reset')
+  })
   $('#editPostForm').trigger('reset')
 }
 
 const onUpdatePostFailure = function () {
-  $(postMessage).html('<p>There was an error. Please try again.</p>')
+  $(editPostMessage).html('<p>There was an error. Please try again.</p>')
+  $('#editPostModal').on('hidden.bs.modal', function (e) {
+    $(editPostMessage).html(' ')
+    $('#editPostForm').trigger('reset')
+  })
 }
 
 const onDeletePostSuccess = function () {
-  console.log('deleted it')
   $('#deletePostButton').closest('.section.post > .row').hide(200).remove()
   $('#deletePostMessage').html('<p>Your post has been deleted.</p>')
 }
