@@ -6,9 +6,6 @@ const signUpSuccess = function (data) {
   $('#signUpMessage').text('Signed up successfully')
   $('#signUpMessage').css('color', 'green')
   $('#signUpButton').hide(200)
-  $('#signInButton').hide(200)
-  $('#signedInButton').show(200)
-  $('.section.welcome').hide(200)
   store.user = data.user
 }
 
