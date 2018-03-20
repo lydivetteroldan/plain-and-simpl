@@ -25,19 +25,19 @@
                 <form id="signUpForm">
                   <div class="form-group">
                     <label for="inputEmail1" class="control-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail1" name="credentials[email]" placeholder="Email">
+                    <input type="email" class="form-control" id="inputEmail1" name="credentials[email]" placeholder="Email" required>
                   </div>
                   <div class="form-group">
                     <label for="inputPassword1" class="control-label">Password</label>
-                    <input type="password" class="form-control" id="inputPassword1" name="credentials[password]" placeholder="Password">
+                    <input type="password" class="form-control" id="inputPassword1" name="credentials[password]" placeholder="Password" required>
                   </div>
                   <div class="form-group">
                     <label for="inputPassword2" class="control-label">Confirm Password</label>
-                    <input type="password" class="form-control" id="inputPassword2" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                    <input type="password" class="form-control" id="inputPassword2" name="credentials[password_confirmation]" placeholder="Confirm Password" required>
                   </div>
                   <div class="form-group">
                     <button type="submit" class="btn btn-default text-lowercase" id="signUpSave">Save</button>
-                    <p id="signUpMessage"></p>
+                    <p class="message"></p>
                   </div>
                 </form>
               </div>
@@ -56,11 +56,11 @@
                 <form id="signInForm">
                   <div class="form-group">
                     <label for="inputEmail2" class="control-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail2" name="credentials[email]" placeholder="Email">
+                    <input type="email" class="form-control" id="inputEmail2" name="credentials[email]" placeholder="Email" required>
                   </div>
                   <div class="form-group">
                     <label for="inputPassword3" class="control-label">Password</label>
-                    <input type="password" class="form-control" id="inputPassword3" name="credentials[password]" placeholder="Password">
+                    <input type="password" class="form-control" id="inputPassword3" name="credentials[password]" placeholder="Password" required>
                   </div>
                   <div class="form-group">
                     <button type="submit" class="btn btn-default text-lowercase" id="signInModalButton">Sign In</button>
@@ -83,11 +83,11 @@
                 <form id="changePwdForm">
                   <div class="form-group">
                     <label for="inputPassword4" class="control-label">Current Password</label>
-                    <input type="password" id="inputPassword4" class="form-control" name="passwords[old]" placeholder="Current Password">
+                    <input type="password" id="inputPassword4" class="form-control" name="passwords[old]" placeholder="Current Password" required>
                   </div>
                   <div class="form-group">
                     <label for="inputPassword5" class="control-label">New Password</label>
-                    <input type="password" id="inputPassword5" class="form-control" name="passwords[new]" placeholder="New Password">
+                    <input type="password" id="inputPassword5" class="form-control" name="passwords[new]" placeholder="New Password" required>
                   </div>
                   <div class="form-group">
                     <button type="submit" class="btn btn-default text-lowercase" id="changePwdModalButton">Save</button>
