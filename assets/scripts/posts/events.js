@@ -25,12 +25,6 @@ const onShowPost = function (event) {
 const onCreatePost = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  const post = data.post
-  if (post.title === '' || post.date === '' || post.content === '') {
-    $(ui.postMessage).html('<p>Please make sure there are no empty fields and try again.</p>')
-  } else {
-    $(ui.postMessage).html('<p>There was an error. Please try again.</p>')
-  }
   api.create(data)
     .then(ui.onCreateSuccess)
     .catch(ui.onCreateFailure)
