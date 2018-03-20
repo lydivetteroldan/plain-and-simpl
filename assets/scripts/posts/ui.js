@@ -2,7 +2,7 @@
 
 // TODO remove console.log after debugging!!!
 const createPostMessage = $('.create-post.section .message')
-const findPostMessage = $('#findPostMessage')
+const findPostMessage = $('.find-post .message')
 const editPostMessage = $('.edit-post .message')
 const postsList = $('.posts.section')
 const postsMessage = $('.posts.section .message')
@@ -28,6 +28,7 @@ const onShowPostSuccess = (data) => {
   $(postsList).empty()
   $(postsMessage).html(' ')
   $(postSection).html(showPostHtml)
+  $(findPostMessage).html(' ')
   $('#deletePostMessage').empty()
   $('#findPostForm').trigger('reset')
   if (data.post.editable !== false) {
