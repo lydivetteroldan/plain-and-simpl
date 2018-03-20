@@ -15,11 +15,9 @@ const onShowPost = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   const post = data.post
-  if (post.id.length !== 0) {
-    api.show(post.id)
-      .then(ui.onShowPostSuccess)
-      .catch(ui.onShowPostFailure)
-  }
+  api.show(post.id)
+    .then(ui.onShowPostSuccess)
+    .catch(ui.onShowPostFailure)
 }
 
 const onCreatePost = (event) => {
@@ -33,14 +31,9 @@ const onCreatePost = (event) => {
 const onUpdatePost = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  const post = data.post
-  if (post.title === '' || post.date === '' || post.content === '') {
-    $(ui.editPostMessage).html('<p>All fields are required. Please make sure you entered the correct ID and try again.</p>')
-  } else if (post.id.length !== 0) {
-    api.update(data)
-      .then(ui.onUpdatePostSuccess)
-      .catch(ui.onUpdatePostFailure)
-  }
+  api.update(data)
+    .then(ui.onUpdatePostSuccess)
+    .catch(ui.onUpdatePostFailure)
 }
 
 const onDeletePost = (event) => {
