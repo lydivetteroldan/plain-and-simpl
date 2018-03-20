@@ -33,7 +33,6 @@ const onSignOut = function (event) {
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
-  console.log('event is', event)
 }
 
 const eventHandlers = () => {
