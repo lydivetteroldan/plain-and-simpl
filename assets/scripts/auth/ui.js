@@ -3,6 +3,7 @@
 const store = require('../store')
 
 const signUpSuccess = function (data) {
+  $('form').trigger('reset')
   $('#signUpMessage').text('Signed up successfully')
   $('#signUpMessage').css('color', 'green')
   $('#signUpButton').hide(200)
@@ -10,12 +11,13 @@ const signUpSuccess = function (data) {
 }
 
 const signUpFailure = function () {
+  $('form').trigger('reset')
   $('#signUpMessage').text('Error on signing up')
   $('#signUpMessage').css('color', 'red')
-  $('#signUpForm').trigger('reset')
 }
 
 const signInSuccess = function (data) {
+  $('form').trigger('reset')
   $('#signInMessage').text('Signed in successfully')
   $('#signInMessage').css('color', 'green')
   $('#signInButton').hide(200)
@@ -26,21 +28,21 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function () {
+  $('form').trigger('reset')
   $('#signInMessage').text('Error on signing in')
   $('#signInMessage').css('color', 'red')
-  $('#signInForm').trigger('reset')
 }
 
 const changePasswordSuccess = function () {
+  $('form').trigger('reset')
   $('#changePwdMessage').text('Changed password successfully')
   $('#changePwdMessage').css('color', 'green')
-  $('#changePwdForm').trigger('reset')
 }
 
 const changePasswordFailure = function () {
+  $('form').trigger('reset')
   $('#changePwdMessage').text('Error on changing password')
   $('#changePwdMessage').css('color', 'red')
-  $('#changePwdForm').trigger('reset')
 }
 
 const signOutSuccess = function () {
@@ -56,6 +58,7 @@ const signOutSuccess = function () {
 }
 
 const signOutFailure = function () {
+  $('form').trigger('reset')
   $('#signOutMessage').text('Error on sign out. You might have to stay here forever.')
   $('#signOutMessage').css('color', 'red')
 }
