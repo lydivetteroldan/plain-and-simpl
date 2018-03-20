@@ -142,7 +142,7 @@
                     </div>
                     <div class="col-md-3 col-md-offset-2">
                       <label for="editPostDateInput">Date</label>
-                      <input type="text" class="form-control post-date-input" id="editPostDateInput" name="post[date]" placeholder="MM-DD-YYYY">
+                      <input type="text" class="form-control post-date-input" id="editPostDateInput" name="post[date]" placeholder="dd-mm-yyyy">
                     </div>
                   </div>
                   <div class="form-group">
@@ -223,15 +223,15 @@
                         <div class="form-group row">
                           <div class="col-md-7">
                             <label for="postTitleInput">Title</label>
-                            <input id="postTitleInput" type="text" class="form-control post-title-input" name="post[title]" placeholder="Title">
+                            <input id="postTitleInput" type="text" class="form-control post-title-input" name="post[title]" placeholder="Title" required>
                           </div>
                           <div class="col-md-3 col-md-offset-2">
                             <label for="postDateInput">Date</label>
-                            <input type="text" class="form-control post-date-input" id="postDateInput" name="post[date]" placeholder="MM-DD-YYYY">
+                            <input type="text" class="form-control post-date-input" id="postDateInput" name="post[date]" placeholder="dd-mm-yyyy" required>
                           </div>
                         </div>
                         <div class="form-group">
-                          <textarea id="postContentInput" class="form-control" rows="4" name="post[content]"></textarea>
+                          <textarea id="postContentInput" class="form-control" rows="4" name="post[content]" placeholder="Your content goes here" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-default text-lowercase">Save</button>
                         <div class="message"></div>
