@@ -4,16 +4,19 @@ const store = require('../store')
 
 const signUpSuccess = function (data) {
   $('form').trigger('reset')
-  $('#signUpMessage').text('Signed up successfully')
-  $('#signUpMessage').css('color', 'green')
+  $('#signUpForm').addClass('hidden')
+  $('#signUpError').addClass('hidden')
+  $('#signUpSuccess').removeClass('hidden')
+  $('#signUpSuccess').append('<p class="text-success bg-success">You have signed up successfully.</p>')
   $('#signUpButton').hide(200)
   store.user = data.user
 }
 
 const signUpFailure = function () {
   $('form').trigger('reset')
-  $('#signUpMessage').text('Error on signing up')
-  $('#signUpMessage').css('color', 'red')
+  $('#signUpSuccess').addClass('hidden')
+  $('#signUpError').removeClass('hidden')
+  $('#signUpError').prepend('<p class="text-danger bg-danger">There was an error. Please try again.</p>')
 }
 
 const signInSuccess = function (data) {

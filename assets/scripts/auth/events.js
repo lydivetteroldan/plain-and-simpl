@@ -35,7 +35,14 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
+const onClose = function () {
+  $('.sign-up, .sign-in, .password').on('hidden.bs.modal', function (e) {
+    $('.message p').html(' ')
+  })
+}
+
 const eventHandlers = () => {
+  onClose()
   $('#signUpForm').on('submit', onSignUp)
   $('#signInForm').on('submit', onSignIn)
   $('#changePwdForm').on('submit', onChangePassword)
