@@ -23,22 +23,8 @@
 }
 
 @media (min-width: $screen-sm-max) {
-  .main {
-    > .navbar {
-      padding-left: $medium-padding;
-      padding-right: $medium-padding;
-    }
-  }
-}
-
-@media (max-width: $screen-sm-max) {
-  .main-nav-btn-group {
-    padding-top: 0;
-
-    > .btn {
-      &:first-child {
-        padding-left: 0;
-      }
-    }
+  .page-navbar {
+    padding-left: $medium-padding;
+    padding-right: $medium-padding;
   }
 }
