@@ -36,15 +36,16 @@ const onSignOut = function (event) {
 }
 
 const onClose = function () {
-  $('.sign-up, .sign-in, .password').on('hidden.bs.modal', function (e) {
+  $('.password').on('hidden.bs.modal', function (e) {
     $('.message p').html(' ')
   })
 }
 
 const eventHandlers = () => {
   onClose()
-  $('#signUpForm').on('submit', onSignUp)
-  $('#signInForm').on('submit', onSignIn)
+  $('#signUp').on('submit', onSignUp)
+  $('#signInButton').on('click', ui.showSignIn)
+  $('#signIn').on('submit', onSignIn)
   $('#changePwdForm').on('submit', onChangePassword)
   $('#signOutButton').on('click', onSignOut)
 }

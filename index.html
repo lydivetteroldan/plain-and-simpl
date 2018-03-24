@@ -13,67 +13,6 @@
     </head>
     <body class="container-fluid">
       <div id="page">
-        <!-- Modal: Sign Up -->
-        <div class="modal fade sign-up" tabindex="-1" role="dialog" aria-labelledby="signUpLabel" id="signUp">
-          <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title text-lowercase" id="signUpLabel">Sign Up</h4>
-              </div>
-              <div class="modal-body">
-                <form id="signUpForm">
-                  <div class="form-group">
-                    <label for="inputEmail1" class="control-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail1" name="credentials[email]" placeholder="Email" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputPassword1" class="control-label">Password</label>
-                    <input type="password" class="form-control" id="inputPassword1" name="credentials[password]" placeholder="Password" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputPassword2" class="control-label">Confirm Password</label>
-                    <input type="password" class="form-control" id="inputPassword2" name="credentials[password_confirmation]" placeholder="Confirm Password" required>
-                  </div>
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-default text-lowercase">Sign Up</button>
-                  </div>
-                </form>
-                <div class="message error hidden" id="signUpError"></div>
-                <div class="message success hidden" id="signUpSuccess">
-                  <button type="button" class="btn btn-default text-lowercase" data-dismiss="modal" aria-label="Close">Continue</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Modal: Sign In -->
-        <div class="modal fade sign-in" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel" id="signInModal">
-          <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title text-lowercase" id="signUpLabel">Sign In</h4>
-              </div>
-              <div class="modal-body">
-                <form id="signInForm">
-                  <div class="form-group">
-                    <label for="inputEmail2" class="control-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail2" name="credentials[email]" placeholder="Email" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputPassword3" class="control-label">Password</label>
-                    <input type="password" class="form-control" id="inputPassword3" name="credentials[password]" placeholder="Password" required>
-                  </div>
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-default text-lowercase" id="signInModalButton">Sign In</button>
-                    <p id="signInMessage"></p>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
         <!-- Modal: Change Password -->
         <div class="modal fade password" tabindex="-1" role="dialog" aria-labelledby="changePwdLabel" id="changePwdModal">
           <div class="modal-dialog modal-sm" role="document">
@@ -94,7 +33,11 @@
                   </div>
                   <div class="form-group">
                     <button type="submit" class="btn btn-default text-lowercase" id="changePwdModalButton">Save</button>
-                    <p id="changePwdMessage"></p>
+                    <br>
+                    <div class="password-notifications">
+                      <p class="text-success password-message success hidden"></p>
+                      <p class="text-danger password-message error hidden"></p>
+                    </div>
                   </div>
                 </form>
               </div>
@@ -166,8 +109,6 @@
               <a class="btn btn-link btn-inline btn-navbar text-lowercase" href="#">Plain and Simpl</a>
             </div>
             <div class="navbar-right">
-              <button type="submit" data-toggle="modal" data-target="#signUp" class="btn btn-link btn-inline text-lowercase" id="signUpButton">Sign up</button>
-              <button type="submit" data-toggle="modal" data-target="#signInModal" class="btn btn-link btn-inline text-lowercase" id="signInButton">Sign In</button>
               <div class="dropdown">
                 <button type="submit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-link btn-inline text-lowercase" id="signedInButton">Signed In</button>
                 <ul class="dropdown-menu" aria-labelledby="signedInButton">
@@ -193,7 +134,7 @@
                   </li>
                   <li role="separator" class="divider"></li>
                   <li>
-                    <button type="submit" class="btn btn-link btn-inline text-lowercase" id="signOutButton" >Sign Out</button>
+                    <button type="submit" class="btn btn-link btn-inline text-lowercase" id="signOutButton">Sign Out</button>
                   </li>
                 </ul>
               </div>
@@ -203,18 +144,68 @@
         <div class="container main-container">
           <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
             <div class="page-content" id="pageContent">
-              <div class="section welcome">
-                <h1>Hello</h1>
-                <hr class="divider">
-                <p class="lead">
-                  Sign up or sign in to manage your posts.
-                </p>
-              </div>
+              <section class="section welcome">
+                <div class="row welcome-text">
+                  <div class="col-xs-12">
+                    <h1>Hello</h1>
+                    <hr class="divider">
+                    <p class="lead welcome-intro">
+                      Sign up or sign in to manage your posts.
+                    </p>
+                    <div class="page-notifications">
+                      <p class="lead text-danger sign-up-message error hidden"></p>
+                      <p class="lead sign-up-message success hidden"></p>
+                      <p class="lead text-danger sign-in-message error hidden"></p>
+                      <p class="lead sign-in-message success hidden"></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row welcome-forms">
+                  <div class="col-md-6">
+                    <!-- Sign Up -->
+                    <div class="sign-up">
+                      <form id="signUp">
+                        <div class="form-group">
+                          <label for="inputEmail1" class="control-label">Email</label>
+                          <input type="email" class="form-control" id="inputEmail1" name="credentials[email]" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="inputPassword1" class="control-label">Password</label>
+                          <input type="password" class="form-control" id="inputPassword1" name="credentials[password]" placeholder="Password" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="inputPassword2" class="control-label">Confirm Password</label>
+                          <input type="password" class="form-control" id="inputPassword2" name="credentials[password_confirmation]" placeholder="Confirm Password" required>
+                        </div>
+                        <div class="form-group">
+                          <button type="submit" class="btn btn-default text-lowercase">Sign Up</button>
+                        </div>
+                      </form>
+                      <small class="sign-up-cta">If you already have an account, sign in <button type="submit" class="btn btn-link btn-inline" id="signInButton">here</button>.</small>
+                    </div>
+                    <!-- Sign In -->
+                    <div class="sign-in">
+                      <form id="signIn">
+                        <div class="form-group">
+                          <label for="inputEmail2" class="control-label">Email</label>
+                          <input type="email" class="form-control" id="inputEmail2" name="credentials[email]" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="inputPassword3" class="control-label">Password</label>
+                          <input type="password" class="form-control" id="inputPassword3" name="credentials[password]" placeholder="Password" required>
+                        </div>
+                        <div class="form-group">
+                          <button type="submit" class="btn btn-default text-lowercase">Sign In</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </section>
               <section class="section posts" id="postsList">
                 <div class="message"></div>
               </section>
-              <section class="section post">
-              </section>
+              <section class="section post"></section>
               <!-- Modal: Create Post -->
               <section class="modal fade section create-post" tabindex="-1" role="dialog" aria-labelledby="createPostFormLabel" id="createPostModal">
                 <div class="modal-dialog" role="document">

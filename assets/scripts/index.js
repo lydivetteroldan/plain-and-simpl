@@ -7,7 +7,7 @@ const authEvents = require('./auth/events')
 const postEvents = require('./posts/events')
 
 function notSignedIn () {
-  $('#signedInButton').hide()
+  $('.sign-in, #signedInButton').hide()
 }
 
 notSignedIn()

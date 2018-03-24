@@ -2,61 +2,70 @@
 
 const store = require('../store')
 
+const showSignIn = function () {
+  $('.sign-up').hide('slow')
+  $('.sign-up-message.error').addClass('hidden')
+  $('.sign-in').show('slow')
+}
+
 const signUpSuccess = function (data) {
   $('form').trigger('reset')
-  $('#signUpForm').addClass('hidden')
-  $('#signUpError').addClass('hidden')
-  $('#signUpSuccess').removeClass('hidden')
-  $('#signUpSuccess').append('<p class="text-success bg-success">You have signed up successfully.</p>')
-  $('#signUpButton').hide(200)
+  showSignIn()
+  $('.welcome-intro').addClass('hidden')
+  $('.sign-up-message.success, .welcome-text .divider').removeClass('hidden')
+  $('.sign-up-message.success').append('You have signed up successfully. Please sign in to continue.')
   store.user = data.user
 }
 
 const signUpFailure = function () {
   $('form').trigger('reset')
-  $('#signUpSuccess').addClass('hidden')
-  $('#signUpError').removeClass('hidden')
-  $('#signUpError').prepend('<p class="text-danger bg-danger">There was an error. Please try again.</p>')
+  $('.sign-up-message.success, .welcome-text .divider, .welcome-intro').addClass('hidden')
+  $('.sign-up-message.error').removeClass('hidden')
+  $('.sign-up-message.error').html(' ')
+  $('.sign-up-message.error').append('There was an error. Please try again.')
 }
 
 const signInSuccess = function (data) {
   $('form').trigger('reset')
-  $('#signInMessage').text('Signed in successfully')
-  $('#signInMessage').css('color', 'green')
-  $('#signInButton').hide(200)
-  $('#signUpButton').hide(200)
-  $('#signedInButton').show(200)
-  $('.section.welcome').hide(200)
+  $('#signedInButton').show('slow')
+  $('.welcome-forms, .sign-in').hide('slow')
+  $('.sign-in-message.error, .welcome-intro').addClass('hidden')
+  $('.sign-in-message.success').removeClass('hidden')
+  $('.sign-in-message.success').append('Create, edit, view and delete your posts.')
   store.user = data.user
 }
 
 const signInFailure = function () {
   $('form').trigger('reset')
-  $('#signInMessage').text('Error on signing in')
-  $('#signInMessage').css('color', 'red')
+  $('.sign-in-message.success, .welcome-text .divider, .welcome-intro').addClass('hidden')
+  $('.sign-in-message.error').removeClass('hidden')
+  $('.sign-in-message.error').html(' ')
+  $('.sign-in-message.error').append('There was an error. Please try again.')
 }
 
 const changePasswordSuccess = function () {
   $('form').trigger('reset')
-  $('#changePwdMessage').text('Changed password successfully')
-  $('#changePwdMessage').css('color', 'green')
+  $('.password-message.success').html(' ')
+  $('.password-message.error').addClass('hidden')
+  $('.password-message.success').removeClass('hidden')
+  $('.password-message.success').append('Your new password has been saved.')
 }
 
 const changePasswordFailure = function () {
   $('form').trigger('reset')
-  $('#changePwdMessage').text('Error on changing password')
-  $('#changePwdMessage').css('color', 'red')
+  $('.password-message.success').addClass('hidden')
+  $('.password-message.error').removeClass('hidden')
+  $('.password-message.error').html(' ')
+  $('.password-message.error').append('There was an error. Please try again.')
 }
 
 const signOutSuccess = function () {
   $('form').trigger('reset')
-  $('#signInMessage').text(' ')
-  $('#changePwdMessage').text(' ')
-  $('#signInButton').show(200)
-  $('#signUpButton').show(200)
-  $('#signedInButton').hide(200)
-  $('#postsList').hide(200)
-  $('.section.welcome').show(200)
+  $('.error, .success').html(' ')
+  $('.sign-in-message.success').addClass('hidden')
+  $('.welcome-intro').removeClass('hidden')
+  $('.welcome-forms, .sign-up, #signInButton').show('slow')
+  $('#signedInButton, #postsList').hide('slow')
   store.user = null
 }
 
@@ -67,6 +76,7 @@ const signOutFailure = function () {
 }
 
 module.exports = {
+  showSignIn,
   signUpSuccess,
   signUpFailure,
   signInSuccess,
