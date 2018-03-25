@@ -1,6 +1,5 @@
 'use strict'
 
-// TODO remove console.log after debugging!!!
 const createPostMessage = $('.create-post.section .message')
 const findPostMessage = $('.find-post .message')
 const editPostMessage = $('.edit-post .message')
@@ -9,32 +8,37 @@ const postsMessage = $('.posts.section .message')
 const postSection = $('.post.section')
 const showPostTemplate = require('../templates/post.handlebars')
 const showPostsTemplate = require('../templates/posts.handlebars')
-const showUpdatedPostTemplate = require('../templates/post.handlebars')
+
+$('.modal').on('hidden.bs.modal', function (e) {
+  $('.message').html(' ')
+  $('form').trigger('reset')
+})
 
 const onShowPostsSuccess = (data) => {
   const showPostsHtml = showPostsTemplate({ posts: data.posts })
-  $('#deletePostMessage').empty()
   $(postsList).html(showPostsHtml)
+  $(postSection).html(' ')
   $(postsMessage).html(' ')
 }
 
 const onShowPostsFailure = () => {
   $(postsMessage).html('<p>No posts found.<p>')
   $(postsList).html(' ')
+  $(postSection).html(' ')
 }
 
 const onShowPostSuccess = (data) => {
   const showPostHtml = showPostTemplate({ post: data.post })
-  $(postsList).empty()
+  $(postsList).html(' ')
   $(postsMessage).html(' ')
-  $(postSection).html(showPostHtml)
   $(findPostMessage).html(' ')
-  $('#deletePostMessage').empty()
   $('#findPostForm').trigger('reset')
+  $(postSection).html(showPostHtml)
   if (data.post.editable !== false) {
     $('#editPostButton').show()
     $('#deletePostButton').show()
   } else {
+    $(postsMessage).html('<p>No posts found.<p>')
     $('#editPostButton').hide()
     $('#deletePostButton').hide()
   }
@@ -42,13 +46,14 @@ const onShowPostSuccess = (data) => {
 
 const onShowPostFailure = () => {
   $(findPostMessage).html('The post could not be found.')
+  $(postsList).html(' ')
   $(postSection).html(' ')
 }
 
 const onCreateSuccess = function (data) {
   $(createPostMessage).html('<p>Your post has been saved.</p>')
   const showPostHtml = showPostTemplate({ post: data.post })
-  $(postsList).empty()
+  $(postsList).html(' ')
   $(postsMessage).html(' ')
   $(postSection).html(showPostHtml)
   $('#createPostModal').on('hidden.bs.modal', function (e) {
@@ -62,10 +67,10 @@ const onCreateFailure = function () {
 }
 
 const onUpdatePostSuccess = function (data) {
-  const showUpdatedPostHtml = showUpdatedPostTemplate({ post: data.post })
-  $(postsList).empty()
+  const showPostHtml = showPostTemplate({ post: data.post })
+  $(postsList).html(' ')
   $(postsMessage).html(' ')
-  $(postSection).html(showUpdatedPostHtml)
+  $(postSection).html(showPostHtml)
   $(editPostMessage).html('<p>Your post has been updated.</p>')
   $('#editPostModal').on('hidden.bs.modal', function (e) {
     $(editPostMessage).html(' ')
@@ -84,12 +89,12 @@ const onUpdatePostFailure = function () {
 
 const onDeletePostSuccess = function () {
   $('#deletePostButton').closest('.section.post > .row').hide(200).remove()
-  $('#deletePostMessage').html('<p>Your post has been deleted.</p>')
-  $(postsMessage).html(' ')
+  $(postSection).html(' ')
+  $(postsList).append('<p class="message">Your post has been deleted.</p>')
 }
 
 const onDeletePostFailure = function () {
-  $('#deletePostMessage').html('<p>There was an error. Your post was not deleted. Please try again. </p>')
+  $(postsList).append('<p class="message">There was an error. Please try again. </p>')
 }
 
 module.exports = {

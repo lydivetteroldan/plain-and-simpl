@@ -1,22 +1,22 @@
 <ul class="list-unstyled posts-list">
   {{#each posts as |post|}}
-    <li data-id="{{post.id}}">
-      <div class="row" data-id="{{post.id}}">
-        <div class="col-xs-12 post-header">
-          <h3 class="post-title">{{post.title}}</h3>
-          <h4 class="post-date">{{post.date}}</h4>
-        </div>
-        <div class="col-xs-12">
-          <div class="post-content">
-            {{post.content}}
-          </div>
-        </div>
-        <div class="col-xs-12">
-          <div class="text-muted post-footer">
-            <small>Post ID: {{post.id}}</small>
-          </div>
+  <li data-id="{{post.id}}">
+    <div class="row" data-id="{{post.id}}">
+      <div class="col-xs-12 post-header">
+        <h3 class="post-title">{{post.title}}</h3>
+        <h4 class="post-date">{{post.date}}</h4>
+      </div>
+      <div class="col-xs-12">
+        <div class="post-content">
+          {{post.content}}
         </div>
       </div>
-    </li>
+      <div class="col-xs-12">
+        <div class="text-muted post-footer">
+          <small>Post ID: {{post.id}}</small>
+        </div>
+      </div>
+    </div>
+  </li>
   {{/each}}
 </ul>
