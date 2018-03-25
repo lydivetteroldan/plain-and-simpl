@@ -6,6 +6,7 @@ const showSignIn = function () {
   $('.sign-up').hide('slow')
   $('.sign-up-message.error, .welcome-intro > .highlight').addClass('hidden')
   $('.welcome-intro > .highlight + span').addClass('text-capitalize')
+  $('.welcome-intro').removeClass('hidden')
   $('.sign-in').show('slow')
 }
 
@@ -19,10 +20,8 @@ const showSignUp = function () {
 
 const signUpSuccess = function (data) {
   $('form').trigger('reset')
+  $('.welcome-text .divider').removeClass('hidden')
   showSignIn()
-  $('.welcome-intro').addClass('hidden')
-  $('.sign-up-message.success, .welcome-text .divider').removeClass('hidden')
-  $('.sign-up-message.success').append('You have signed up successfully. Please sign in to continue.')
   store.user = data.user
 }
 
@@ -38,7 +37,7 @@ const signInSuccess = function (data) {
   $('form').trigger('reset')
   $('#signedInButton').show('slow')
   $('.welcome-forms, .sign-in').hide('slow')
-  $('.sign-in-message.error, .welcome-intro').addClass('hidden')
+  $('.sign-in-message.error, .sign-up-message.success, .welcome-intro').addClass('hidden')
   $('.sign-in-message.success').removeClass('hidden')
   $('.sign-in-message.success').append('Create, edit, view and delete your posts.')
   store.user = data.user
@@ -81,8 +80,7 @@ const signOutSuccess = function () {
 
 const signOutFailure = function () {
   $('form').trigger('reset')
-  $('#signOutMessage').text('Error on sign out. You might have to stay here forever.')
-  $('#signOutMessage').css('color', 'red')
+  $('.posts.section').append('<p class="message">Error on sign out. You might have to stay here forever.</p>')
 }
 
 module.exports = {
