@@ -4,8 +4,17 @@ const store = require('../store')
 
 const showSignIn = function () {
   $('.sign-up').hide('slow')
-  $('.sign-up-message.error').addClass('hidden')
+  $('.sign-up-message.error, .welcome-intro > .highlight').addClass('hidden')
+  $('.welcome-intro > .highlight + span').addClass('text-capitalize')
   $('.sign-in').show('slow')
+}
+
+const showSignUp = function () {
+  $('.sign-in').hide('slow')
+  $('.sign-in-message.error').addClass('hidden')
+  $('.welcome-intro > .highlight + span').removeClass('text-capitalize')
+  $('.welcome-intro, .welcome-intro > .highlight').removeClass('hidden')
+  $('.sign-up').show('slow')
 }
 
 const signUpSuccess = function (data) {
@@ -61,9 +70,10 @@ const changePasswordFailure = function () {
 
 const signOutSuccess = function () {
   $('form').trigger('reset')
-  $('.error, .success').html(' ')
+  $('.error, .success, .post.section, .posts.section').html(' ')
   $('.sign-in-message.success').addClass('hidden')
-  $('.welcome-intro').removeClass('hidden')
+  $('.welcome-intro, .welcome-intro > .highlight').removeClass('hidden')
+  $('.welcome-intro > .highlight + span').removeClass('text-capitalize')
   $('.welcome-forms, .sign-up, #signInButton').show('slow')
   $('#signedInButton, #postsList').hide('slow')
   store.user = null
@@ -76,6 +86,7 @@ const signOutFailure = function () {
 }
 
 module.exports = {
+  showSignUp,
   showSignIn,
   signUpSuccess,
   signUpFailure,

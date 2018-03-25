@@ -44,10 +44,11 @@ const onClose = function () {
 const eventHandlers = () => {
   onClose()
   $('#signUp').on('submit', onSignUp)
-  $('#signInButton').on('click', ui.showSignIn)
   $('#signIn').on('submit', onSignIn)
   $('#changePwdForm').on('submit', onChangePassword)
   $('#signOutButton').on('click', onSignOut)
+  $('#signInButton').on('click', ui.showSignIn)
+  $('#signUpButton').on('click', ui.showSignUp)
 }
 
 module.exports = {
